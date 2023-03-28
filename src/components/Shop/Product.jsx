@@ -14,10 +14,12 @@ const Product = (props) => {
                 <figure className="rounded-lg p-2"><img className="m-2 rounded" src={img} alt="Shoes" /></figure>
                 <div className="card-body my-3">
                         <h2 className="card-title"> {name}</h2>
+                    <div>
                         <p><span className=''>Price:</span> $ {price}</p>
                         <p>Seller: {seller}</p>
                         <div>
-                            <button>Rating: <span className="btn btn-error btn-outline btn-xs">{ratings}</span></button>
+                            <button>stock: <span className="btn btn-error btn-outline btn-xs">{stock}</span></button>
+                        </div>
                         </div>
                     
                 </div>
