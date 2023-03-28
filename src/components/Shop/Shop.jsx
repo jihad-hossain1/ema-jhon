@@ -44,7 +44,9 @@ const Shop = () => {
         // const newCart = [...cart, product];
         // setCart(newCart);
         // addToDb(product.id)
-        let newCart = [];
+
+
+       /* let newCart = [];
         const exists = cart.find(pd => pd.id === product.id);
         if (!exists) {
             product.quantity = 1;
@@ -55,6 +57,8 @@ const Shop = () => {
             newCart = [...remaining]
         }
         setCart(newCart);
+        addToDb(product.id);
+        */
     }
     return (
         <div className="grid md:grid-cols-[4fr,1fr] lg:grid-cols-[4fr,1fr] m-2">
