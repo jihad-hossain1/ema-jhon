@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
 import { useLoaderData } from 'react-router-dom';
 import ReviewItems from '../ReviewItems/ReviewItems'
-import { removeFromDb } from '../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../utilities/fakedb';
 
 
 const Orders = () => {
@@ -13,6 +13,11 @@ const Orders = () => {
         const remaing = cart.filter(p => p.id !== id);
         setCart(remaing);
         removeFromDb(id)
+    }
+
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
     }
     return (
         <div className='grid md:grid-cols-[4fr,1fr] lg:grid-cols-[4fr,1fr] m-2'>
@@ -25,7 +30,7 @@ const Orders = () => {
                 </div>
             </div>
             <div className='py-3 lg:py-6 bg-primary px-2 lg:px-9 rounded sticky top-0'>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart} handleClearCart={handleClearCart}></Cart>
             </div>
         </div>
     );

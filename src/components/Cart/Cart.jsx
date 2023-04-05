@@ -1,7 +1,10 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const Cart = (props) => {
     const cart = props.cart;
+    const handleClearCart = props.handleClearCart
     // const { cart } = props.cart;
     let total = 0;
     let totalShiping = 0;
@@ -18,14 +21,18 @@ const Cart = (props) => {
     const tax = total * 7 / 100;
     const grandTotal = total + totalShiping + tax;
     return (
-        <div className="py-3 lg:py-6 bg-primary px-2 lg:px-9 rounded sticky top-0">
+        <div className="py-2 bg-primary px-2 lg:px-4 rounded sticky top-0 h-96">
             <h2 className="text-center font-semibold py-3">Order Summary</h2>
-            <div className='gap-2'>
+            <div className='gap-2 flex flex-col'>
                 <p>Selected Items: {quantity}</p>
                 <p>Total Price: $ {total}</p>
                 <p>Total Shiping: $ {totalShiping}</p>
                 <p>Tax: $ {tax.toFixed(2)}</p>
                 <h6>Grand Total: $ {grandTotal.toFixed(2)}</h6>
+                <div className='mt-6'>
+                    <button onClick={handleClearCart} className='bg-red-400 px-4 py-2 w-full rounded text-white flex justify-between items-center mb-auto'><span>Clear Cart</span> <FontAwesomeIcon className='ml-4 w-4 h-4' icon={faTrash} /></button>
+                    
+                </div>
             </div>            
         </div>
     );
