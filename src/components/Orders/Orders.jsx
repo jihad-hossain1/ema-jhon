@@ -11,7 +11,7 @@ const Orders = () => {
         <div className='grid md:grid-cols-[4fr,1fr] lg:grid-cols-[4fr,1fr] m-2'>
             <div>
                 <h2>Order page- Total prodcuts: {cart.length}</h2>
-                <div>
+                <div className='md:mx-20 lg:mx-72'>
                     {
                         cart.map(product => <ReviewItems product={product}></ReviewItems> )
                     }
