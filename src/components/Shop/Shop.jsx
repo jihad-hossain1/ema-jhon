@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { addToDb, deleteShoppingCart, getShoppingCart } from '../utilities/fakedb'
 import Cart from '../Cart/Cart';
 import Product from './Product';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 
 
@@ -81,7 +84,7 @@ const Shop = () => {
                 </div>
             </div>
             <div className='cart-products'>
-                <Cart cart={cart} handleClearCart={handleClearCart}></Cart>
+                <Cart cart={cart} handleClearCart={handleClearCart}><Link to='/orders'><button  className='bg-stone-400 px-4 py-2 w-full rounded text-white flex justify-between items-center mb-auto'><span>Review Order</span> <FontAwesomeIcon className='ml-4 w-4 h-4' icon={faArrowRight} /></button></Link></Cart>
             </div>
         </div>
     );

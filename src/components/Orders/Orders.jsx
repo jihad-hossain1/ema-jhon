@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItems from '../ReviewItems/ReviewItems'
 import { deleteShoppingCart, removeFromDb } from '../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 
 const Orders = () => {
@@ -30,7 +32,7 @@ const Orders = () => {
                 </div>
             </div>
             <div className='py-3 lg:py-6 bg-primary px-2 lg:px-9 rounded sticky top-0'>
-                <Cart cart={cart} handleClearCart={handleClearCart}></Cart>
+                <Cart cart={cart} handleClearCart={handleClearCart}><Link to="/checkout"><button className='bg-stone-500 px-4 py-2 w-full rounded text-white flex justify-between items-center mb-auto'><span>Checkout</span> <FontAwesomeIcon className='ml-4 w-4 h-4' icon={faArrowRight} /></button></Link></Cart>
             </div>
         </div>
     );
